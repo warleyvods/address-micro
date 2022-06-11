@@ -1,0 +1,26 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: ${DB_MY:jdbc:mysql://localhost:3306/banco}?createDatabaseIfNotExist=true
+    username: mysql
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false
+    show-sql: true
+
+  h2:
+    console:
+      enabled: false
+
+microservice:
+  people:
+    url: "http://pessoa:8081/api/people"
