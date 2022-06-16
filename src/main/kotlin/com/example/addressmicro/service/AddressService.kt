@@ -12,12 +12,9 @@ class AddressService(
 ) {
 
     fun save(address: Address): Address {
-        peopleClient.getPeopleById(address.peopleId).id
+        peopleClient.getPeopleById(address.peopleId)
         return addressRepository.save(address)
     }
-
-    fun findById(id: Long) = addressRepository.findById(id).get()
-
 
     fun listAll(id: Long) = addressRepository.findByPeopleId(id)
 

@@ -1,10 +1,8 @@
 package com.example.addressmicro.controllers
 
-import com.example.addressmicro.cliente.PeopleClient
 import com.example.addressmicro.controllers.dtos.AddressRequestDTO
 import com.example.addressmicro.controllers.dtos.AddressResponseDTO
 import com.example.addressmicro.controllers.mapper.AddressMapper
-import com.example.addressmicro.models.Address
 import com.example.addressmicro.service.AddressService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -22,11 +20,6 @@ class AddressController(private val addressService: AddressService) {
     fun save(@RequestBody @Valid addressRequestDTO: AddressRequestDTO): AddressResponseDTO {
         val address = AddressMapper.toDomain(addressRequestDTO)
         return AddressMapper.fromDomain(addressService.save(address))
-    }
-
-    @GetMapping("{id}")
-    fun find(@PathVariable id: Long): AddressResponseDTO {
-        return AddressMapper.fromDomain(addressService.findById(id))
     }
 
     @GetMapping("list/{id}")

@@ -10,5 +10,4 @@ data class AddressResponseDTO(
     val state: String,
     val country: String,
     val city: String
-) {
-}
+)

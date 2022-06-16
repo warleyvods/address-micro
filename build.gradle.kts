@@ -32,6 +32,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+    implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
+
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("com.h2database:h2")
     runtimeOnly("mysql:mysql-connector-java")
