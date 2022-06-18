@@ -18,4 +18,6 @@ class AddressService(
 
     fun listAll(id: Long) = addressRepository.findByPeopleId(id)
 
+    fun deleteByid(id: Long) = addressRepository.deleteById(id)
+
 }

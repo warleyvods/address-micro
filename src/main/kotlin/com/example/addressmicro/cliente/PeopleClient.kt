@@ -4,7 +4,6 @@ import com.example.addressmicro.cliente.dto.PeopleResponseDTO
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
-import java.util.*
 
 @FeignClient(url = "\${microservice.people.url}", name = "peopleClient", fallbackFactory = PeopleClientFallback::class)
 interface PeopleClient {
